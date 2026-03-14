@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Checker</title>
+    <link rel="stylesheet" href="ats.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>📄 ATS Resume Checker</h1>
+        <p class="subtitle">Check how well your resume matches the job description</p>
+
+        <div class="card">
+            <label>Upload Resume (PDF or DOCX)</label>
+            <input type="file" id="resumeFile" accept=".pdf,.docx">
+
+            <label>Paste Job Description</label>
+            <textarea id="jobDescription" rows="6" placeholder="Paste the job description here..."></textarea>
+
+            <button id="checkBtn" onclick="checkResume()">Check ATS Score</button>
+        </div>
+
+        <div class="result" id="result" style="display:none;">
+            <h2>Your ATS Score</h2>
+            <div class="score-circle" id="scoreCircle">0%</div>
+
+            <div class="keywords">
+                <div class="matched">
+                    <h3>✅ Matched Keywords</h3>
+                    <div id="matchedKeywords"></div>
+                </div>
+                <div class="missing">
+                    <h3>❌ Missing Keywords</h3>
+                    <div id="missingKeywords"></div>
+                </div>
+            </div>
+        </div>
+        <div class="backToHomeBtn">
+        <a href="welcomePage.html"><button>Back To Home</button></a>
+        </div>
+    </div>
+
+    <script src="ats.js"></script>
+</body>
+
+</html>
